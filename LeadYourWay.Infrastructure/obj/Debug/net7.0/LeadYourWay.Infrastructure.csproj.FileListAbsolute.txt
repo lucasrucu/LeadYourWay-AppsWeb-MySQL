@@ -1,0 +1,12 @@
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\bin\Debug\net7.0\LeadYourWay.Infrastructure.deps.json
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\bin\Debug\net7.0\LeadYourWay.Infrastructure.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\bin\Debug\net7.0\LeadYourWay.Infrastructure.pdb
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\obj\Debug\net7.0\LeadYourWay.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\obj\Debug\net7.0\LeadYourWay.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\obj\Debug\net7.0\LeadYourWay.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\obj\Debug\net7.0\LeadYourWay.Infrastructure.AssemblyInfo.cs
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\obj\Debug\net7.0\LeadYourWay.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\obj\Debug\net7.0\LeadYourWay.Infrastructure.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\obj\Debug\net7.0\refint\LeadYourWay.Infrastructure.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\obj\Debug\net7.0\LeadYourWay.Infrastructure.pdb
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Infrastructure\obj\Debug\net7.0\ref\LeadYourWay.Infrastructure.dll
