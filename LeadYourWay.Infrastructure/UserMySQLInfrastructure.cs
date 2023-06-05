@@ -14,7 +14,7 @@ public class UserMySQLInfrastructure : IUserInfrastructure
     
     public List<User> GetAll()
     {
-        return _leadYourWayContext.Users.ToList();
+        return _leadYourWayContext.Users.Where(c => c.IsActive).ToList();
     }
 
     public User GetById(int id)

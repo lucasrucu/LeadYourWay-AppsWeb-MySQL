@@ -14,7 +14,8 @@ public class UserDomain : IUserDomain
     
     public bool save(User value)
     {
-        // realizar validaciones aqui
+        if(!this.IsValidName(value.Name)) throw new Exception("Name is not valid");
+        
         return _userInfrastructure.save(value);
     }
 
@@ -27,5 +28,11 @@ public class UserDomain : IUserDomain
     public bool delete(int id)
     {
         return _userInfrastructure.delete(id);
+    }
+    
+    private bool IsValidName(string name)
+    {
+        if (name.Length > 50) return  false;
+        return true;
     }
 }

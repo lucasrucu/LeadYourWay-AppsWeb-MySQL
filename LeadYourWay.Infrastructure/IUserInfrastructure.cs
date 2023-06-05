@@ -5,7 +5,7 @@ namespace LeadYourWay.Infrastructure;
 public interface IUserInfrastructure
 {
     List<User> GetAll();
-    public User GetById(int id);
+    User GetById(int id);
     public bool save(User value);
     public bool update(int id, User value);
     public bool delete(int id);

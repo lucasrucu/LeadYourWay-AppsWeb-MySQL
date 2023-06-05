@@ -35,16 +35,17 @@ public class LeadYourWayContext : DbContext
         builder.Entity<User>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
         builder.Entity<User>().Property(c => c.Name).IsRequired().HasMaxLength(60);
         builder.Entity<User>().Property(c => c.Email).IsRequired().HasMaxLength(60);
-        builder.Entity<User>().Property(c => c.Password).IsRequired().HasMaxLength(60);
-        builder.Entity<User>().Property(c => c.Phone).IsRequired().HasMaxLength(60);
+        builder.Entity<User>().Property(c => c.Password).IsRequired().HasMaxLength(100);
+        builder.Entity<User>().Property(c => c.Phone).IsRequired().HasMaxLength(15);
         builder.Entity<User>().Property(c => c.BirthDate).IsRequired();
-        
+        builder.Entity<User>().Property(c => c.IsActive).HasDefaultValue(true);
+
         // Bicycle
         builder.Entity<Bicycle>().ToTable("Bicycles");
         builder.Entity<Bicycle>().HasKey(p => p.Id);
         builder.Entity<Bicycle>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
         builder.Entity<Bicycle>().Property(p => p.Name).IsRequired().HasMaxLength(60);
-        builder.Entity<Bicycle>().Property(p => p.Description).IsRequired().HasMaxLength(60);
+        builder.Entity<Bicycle>().Property(p => p.Description).IsRequired().HasMaxLength(500);
         builder.Entity<Bicycle>().Property(p => p.Price).IsRequired();
         builder.Entity<Bicycle>().Property(p => p.Size).IsRequired().HasMaxLength(60);
         builder.Entity<Bicycle>().Property(p => p.Model).IsRequired().HasMaxLength(60);

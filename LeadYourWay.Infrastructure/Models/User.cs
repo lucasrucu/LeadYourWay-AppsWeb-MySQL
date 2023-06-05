@@ -8,5 +8,6 @@ public class User
     public string Password { get; set; }
     public string Phone { get; set; }
     public DateTime BirthDate { get; set; }
+    public bool IsActive { get; set; }
     public virtual List<Bicycle> Bicycles { get; set; }
 }

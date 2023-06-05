@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LeadYourWay.API.Request;
+using LeadYourWay.API.Response;
 using LeadYourWay.Domain;
 using LeadYourWay.Infrastructure;
 using LeadYourWay.Infrastructure.Models;
@@ -33,16 +35,40 @@ namespace LeadYourWay.API
 
         // GET: api/User/5
         [HttpGet("{id}", Name = "GetUserById")]
-        public User Get(int id)
+        public UserResponse Get(int id)
         {
-            return _userInfrastructure.GetById(id);
+            User user = _userInfrastructure.GetById(id);
+            UserResponse userResponse = new UserResponse()
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Email = user.Email,
+                Phone = user.Phone,
+                BirthDate = user.BirthDate
+            };
+            return userResponse;
         }
 
         // POST: api/User
         [HttpPost (Name = "PostUser")]
         public void Post([FromBody] User value)
         {
-            _userDomain.save(value);
+            if (ModelState.IsValid)
+            {
+                UserRequest userRequest = new UserRequest()
+                {
+                    Name = value.Name,
+                    Email = value.Email,
+                    Password = value.Password,
+                    Phone = value.Phone,
+                    BirthDate = value.BirthDate
+                };
+                _userDomain.save(value);
+            }
+            else
+            {
+                StatusCode(400);
+            }
         }
 
         // PUT: api/User/5
