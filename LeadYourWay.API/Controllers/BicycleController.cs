@@ -1,27 +1,30 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
+using LeadYourWay.API.Request;
 using LeadYourWay.Domain;
 using LeadYourWay.Infrastructure;
 using LeadYourWay.Infrastructure.Models;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LeadYourWay.API.Controllers
 {
+    [EnableCors("AllowOrigin")]
     [Route("api/[controller]")]
     [ApiController]
     public class BicycleController : ControllerBase
     {
         // Injections
         private IBicycleInfrastructure _bicycleInfrastructure;
+        private IUserInfrastructure _userInfrastructure;
         private IBicycleDomain _bicycleDomain;
+        private IMapper _mapper;
         
-        public BicycleController(IBicycleInfrastructure bicycleInfrastructure, IBicycleDomain bicycleDomain)
+        public BicycleController(IBicycleInfrastructure bicycleInfrastructure, IUserInfrastructure userInfrastructure, IBicycleDomain bicycleDomain, IMapper mapper)
         {
             _bicycleInfrastructure = bicycleInfrastructure;
+            _userInfrastructure = userInfrastructure;
             _bicycleDomain = bicycleDomain;
+            _mapper = mapper;
         }
         
         // GET: api/Bicycle
@@ -37,12 +40,27 @@ namespace LeadYourWay.API.Controllers
         {
             return _bicycleInfrastructure.GetById(id);
         }
+        
+        // GET: api/Bicycle/filterByUserId/5
+        [HttpGet("filterByUserId/{id}", Name = "GetBicycleByUserId")]
+        public List<Bicycle> GetByUserId(int id)
+        {
+            return _bicycleInfrastructure.GetByUserId(id);
+        }
 
         // POST: api/Bicycle
         [HttpPost (Name = "PostBicycle")]
-        public void Post([FromBody] Bicycle value)
+        public void Post([FromBody] BicycleRequest value)
         {
-            _bicycleDomain.save(value);
+            if (ModelState.IsValid)
+            {
+                var bicycle = _mapper.Map<BicycleRequest, Bicycle>(value);
+                _bicycleDomain.save(bicycle);
+            }
+            else
+            {
+                StatusCode(400);
+            }
         }
 
         // PUT: api/Bicycle/5

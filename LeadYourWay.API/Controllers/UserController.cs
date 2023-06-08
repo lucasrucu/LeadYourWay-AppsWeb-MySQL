@@ -2,16 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using LeadYourWay.API.Request;
 using LeadYourWay.API.Response;
 using LeadYourWay.Domain;
 using LeadYourWay.Infrastructure;
 using LeadYourWay.Infrastructure.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LeadYourWay.API
 {
+    [EnableCors("AllowOrigin")]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -19,51 +22,40 @@ namespace LeadYourWay.API
         // Injections
         private IUserInfrastructure _userInfrastructure;
         private IUserDomain _userDomain;
+        private IMapper _mapper;
         
-        public UserController(IUserInfrastructure userInfrastructure, IUserDomain userDomain)
+        public UserController(IUserInfrastructure userInfrastructure, IUserDomain userDomain, IMapper mapper)
         {
             _userInfrastructure = userInfrastructure;
             _userDomain = userDomain;
+            _mapper = mapper;
         }
         
         // GET: api/User
         [HttpGet (Name = "GetUser")]
-        public List<User> Get()
+        public async Task<List<UserResponse>> GetAsync()
         {
-            return _userInfrastructure.GetAll();
+            var users = await _userInfrastructure.GetAllAsync();
+            return _mapper.Map<List<User>, List<UserResponse>>(users);
         }
 
         // GET: api/User/5
         [HttpGet("{id}", Name = "GetUserById")]
-        public UserResponse Get(int id)
+        public User Get(int id)
         {
-            User user = _userInfrastructure.GetById(id);
-            UserResponse userResponse = new UserResponse()
-            {
-                Id = user.Id,
-                Name = user.Name,
-                Email = user.Email,
-                Phone = user.Phone,
-                BirthDate = user.BirthDate
-            };
-            return userResponse;
+            var user = _userInfrastructure.GetById(id);
+            var userResponse = _mapper.Map<User, UserResponse>(_userInfrastructure.GetById(id));
+            return user;
         }
 
         // POST: api/User
         [HttpPost (Name = "PostUser")]
-        public void Post([FromBody] User value)
+        public void Post([FromBody] UserRequest value)
         {
             if (ModelState.IsValid)
             {
-                UserRequest userRequest = new UserRequest()
-                {
-                    Name = value.Name,
-                    Email = value.Email,
-                    Password = value.Password,
-                    Phone = value.Phone,
-                    BirthDate = value.BirthDate
-                };
-                _userDomain.save(value);
+                var userRequest = _mapper.Map<UserRequest, User>(value);
+                _userDomain.save(userRequest);
             }
             else
             {

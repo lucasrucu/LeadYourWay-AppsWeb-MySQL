@@ -1,3 +1,4 @@
+using LeadYourWay.API.Mapper;
 using LeadYourWay.Domain;
 using LeadYourWay.Infrastructure;
 using LeadYourWay.Infrastructure.Context;
@@ -17,6 +18,24 @@ builder.Services.AddScoped<IUserInfrastructure, UserMySQLInfrastructure>();
 builder.Services.AddScoped<IUserDomain, UserDomain>();
 builder.Services.AddScoped<IBicycleInfrastructure, BicycleMySQLInfrastructure>();
 builder.Services.AddScoped<IBicycleDomain, BicycleDomain>();
+builder.Services.AddScoped<ICardInfrastructure, CardMySQLInfrastructure>();
+builder.Services.AddScoped<ICardDomain, CardDomain>();
+builder.Services.AddAutoMapper(
+    typeof(ModelToResponse),
+    typeof(RequestToModel)
+);
+
+// CORS configuration
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowOrigin",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
 
 // MySQL Connection
 var connectionString = builder.Configuration.GetConnectionString("LeadYourWayConnection");
@@ -51,6 +70,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Enable CORS globally
+app.UseCors("AllowOrigin");
 
 app.UseAuthorization();
 

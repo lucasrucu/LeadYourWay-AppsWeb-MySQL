@@ -258,3 +258,5 @@ C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-My
 C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.API\bin\Debug\net7.0\MySqlConnector.dll
 C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.API\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.API\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.API\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

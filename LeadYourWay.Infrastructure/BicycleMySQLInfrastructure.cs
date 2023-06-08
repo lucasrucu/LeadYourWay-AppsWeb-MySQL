@@ -17,6 +17,11 @@ public class BicycleMySQLInfrastructure : IBicycleInfrastructure
         return _leadYourWayContext.Bicycles.ToList();
     }
 
+    public List<Bicycle> GetByUserId(int id)
+    {
+        return _leadYourWayContext.Bicycles.Where(x => x.UserId == id).ToList();
+    }
+
     public Bicycle GetById(int id)
     {
         return _leadYourWayContext.Bicycles.Find(id);

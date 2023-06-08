@@ -10,4 +10,5 @@ public class User
     public DateTime BirthDate { get; set; }
     public bool IsActive { get; set; }
     public virtual List<Bicycle> Bicycles { get; set; }
+    public virtual List<Card> Cards { get; set; }
 }

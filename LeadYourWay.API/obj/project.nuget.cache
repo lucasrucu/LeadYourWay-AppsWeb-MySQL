@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "BEbeJn7C4uyR1G9LB9YeEMptFKMAja4j2WlV6dsrVnEgiv+0ZFvxG52v9+iyaxG66TtGmZiT3NZIhwyfQ1OkDA==",
+  "dgSpecHash": "P8Gz0urxuuEj0bCEK4R6+n9KFqW9rihksh8lODlhrlNeZYD453bEmTJSbZKS9FbTMxi5V8CQJrG2g9DlcD37dg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ruizc\\Documents\\UPC\\Ciclo V\\6_LeadYourWay\\Github\\LeadYourWay-AppsWeb-MySQL Rev 1\\LeadYourWay-AppsWeb-MySQL Rev 0\\LeadYourWay.API\\LeadYourWay.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ruizc\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\ruizc\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\ruizc\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ruizc\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.4\\microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
     "C:\\Users\\ruizc\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",

@@ -1,5 +1,6 @@
 ﻿using LeadYourWay.Infrastructure.Context;
 using LeadYourWay.Infrastructure.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace LeadYourWay.Infrastructure;
 
@@ -12,9 +13,9 @@ public class UserMySQLInfrastructure : IUserInfrastructure
         _leadYourWayContext = leadYourWayContext;
     }
     
-    public List<User> GetAll()
+    public async Task<List<User>> GetAllAsync()
     {
-        return _leadYourWayContext.Users.Where(c => c.IsActive).ToList();
+        return await _leadYourWayContext.Users.Where(c => c.IsActive).ToListAsync();
     }
 
     public User GetById(int id)
@@ -44,10 +45,20 @@ public class UserMySQLInfrastructure : IUserInfrastructure
     public bool delete(int id)
     {
         User user =  _leadYourWayContext.Users.Find(id);
-
-        _leadYourWayContext.Users.Remove(user);
+        user.IsActive = false;
+        _leadYourWayContext.Users.Update(user);
         _leadYourWayContext.SaveChanges();
 
         return true;
+    }
+
+    public bool ExistsByEmail(string email)
+    {
+        return _leadYourWayContext.Users.Any(e => e.Email == email);
+    }
+    
+    public bool ExistsById(int id)
+    {
+        return _leadYourWayContext.Users.Any(e => e.Id == id);
     }
 }
