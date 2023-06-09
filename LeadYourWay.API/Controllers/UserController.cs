@@ -1,15 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using LeadYourWay.API.Request;
 using LeadYourWay.API.Response;
 using LeadYourWay.Domain;
-using LeadYourWay.Infrastructure;
 using LeadYourWay.Infrastructure.Models;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LeadYourWay.API
@@ -20,13 +14,11 @@ namespace LeadYourWay.API
     public class UserController : ControllerBase
     {
         // Injections
-        private IUserInfrastructure _userInfrastructure;
         private IUserDomain _userDomain;
         private IMapper _mapper;
         
-        public UserController(IUserInfrastructure userInfrastructure, IUserDomain userDomain, IMapper mapper)
+        public UserController(IUserDomain userDomain, IMapper mapper)
         {
-            _userInfrastructure = userInfrastructure;
             _userDomain = userDomain;
             _mapper = mapper;
         }
@@ -35,7 +27,7 @@ namespace LeadYourWay.API
         [HttpGet (Name = "GetUser")]
         public async Task<List<UserResponse>> GetAsync()
         {
-            var users = await _userInfrastructure.GetAllAsync();
+            var users = await _userDomain.GetAllAsync();
             return _mapper.Map<List<User>, List<UserResponse>>(users);
         }
 
@@ -43,9 +35,17 @@ namespace LeadYourWay.API
         [HttpGet("{id}", Name = "GetUserById")]
         public User Get(int id)
         {
-            var user = _userInfrastructure.GetById(id);
-            var userResponse = _mapper.Map<User, UserResponse>(_userInfrastructure.GetById(id));
+            var user = _userDomain.GetById(id);
+            var userResponse = _mapper.Map<User, UserResponse>(_userDomain.GetById(id));
             return user;
+        }
+        
+        // POST: api/User/Login
+        [HttpPost("Login", Name = "LoginUser")]
+        public int Login([FromBody] LoginRequest value)
+        {
+            var user = _mapper.Map<LoginRequest, User>(value);
+            return _userDomain.Login(user);
         }
 
         // POST: api/User
@@ -54,18 +54,19 @@ namespace LeadYourWay.API
         {
             if (ModelState.IsValid)
             {
-                var userRequest = _mapper.Map<UserRequest, User>(value);
-                _userDomain.save(userRequest);
+                var user = _mapper.Map<UserRequest, User>(value);
+                _userDomain.save(user);
             }
             else
             {
                 StatusCode(400);
+                throw new Exception("Data was invalid");
             }
         }
 
         // PUT: api/User/5
         [HttpPut("{id}", Name = "PutUser")]
-        public void Put(int id, [FromBody] User value)
+        public void Put(int id, [FromBody] UserUpdateModel value)
         {
             _userDomain.update(id, value);
         }

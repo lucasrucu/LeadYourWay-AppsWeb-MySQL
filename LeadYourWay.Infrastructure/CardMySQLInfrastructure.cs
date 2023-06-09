@@ -25,11 +25,24 @@ public class CardMySQLInfrastructure : ICardInfrastructure
 
     public Card GetById(int id)
     {
-        return _context.Cards.FirstOrDefault(x => x.Id == id);
+        try
+        {
+            return _context.Cards.FirstOrDefault(x => x.Id == id && x.IsActive);
+        }
+        catch (Exception e)
+        {
+            throw new Exception(e.Message);
+        }
+    }
+    
+    public bool ExistsById(int id)
+    {
+        return _context.Cards.Any(e => e.Id == id && e.IsActive);
     }
 
     public bool save(Card value)
     {
+        value.DateCreated = DateTime.Now;
         _context.Cards.Add(value);
         _context.SaveChanges();
         return true;
@@ -37,29 +50,19 @@ public class CardMySQLInfrastructure : ICardInfrastructure
 
     public bool update(int id, Card value)
     {
-        Card card = value;
-        card.Id = id;
-        _context.Cards.Update(card);
+        value.Id = id;
+        value.DateUpdated = DateTime.Now;
+        _context.Cards.Update(value);
         _context.SaveChanges();
         return true;
     }
 
     public bool delete(int id)
     {
-        var card = _context.Cards.FirstOrDefault(x => x.Id == id);
-        if (card == null) return false;
-        _context.Cards.Remove(card);
+        Card card = _context.Cards.Find(id);
+        card.IsActive = false;
+        _context.Cards.Update(card);
         _context.SaveChanges();
         return true;
-    }
-
-    public bool ExistsById(int id)
-    {
-        return _context.Cards.Any(e => e.Id == id);
-    }
-
-    public bool ExistsByUserId(int id)
-    {
-        return _context.Cards.Any(e => e.UserId == id);
     }
 }

@@ -1,10 +1,10 @@
 ﻿using LeadYourWay.Infrastructure.Models;
 
-namespace LeadYourWay.Infrastructure;
+namespace LeadYourWay.Domain;
 
-public interface IBicycleInfrastructure
+public interface IBicycleDomain
 {
-    List<Bicycle> GetAll(); 
+    List<Bicycle> GetAll();
     List<Bicycle> GetByUserId(int id);
     Bicycle GetById(int id);
     public bool save(Bicycle value);

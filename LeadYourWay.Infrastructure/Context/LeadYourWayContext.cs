@@ -37,9 +37,11 @@ public class LeadYourWayContext : DbContext
         builder.Entity<User>().Property(c => c.Name).IsRequired().HasMaxLength(60);
         builder.Entity<User>().Property(c => c.Email).IsRequired().HasMaxLength(60);
         builder.Entity<User>().Property(c => c.Password).IsRequired().HasMaxLength(100);
-        builder.Entity<User>().Property(c => c.Phone).IsRequired().HasMaxLength(15);
-        builder.Entity<User>().Property(c => c.BirthDate).IsRequired();
+        builder.Entity<User>().Property(c => c.Phone).HasMaxLength(15);
+        builder.Entity<User>().Property(c => c.Image);
+        builder.Entity<User>().Property(c => c.BirthDate);
         builder.Entity<User>().Property(c => c.IsActive).HasDefaultValue(true);
+        builder.Entity<User>().Property(c => c.DateCreated).IsRequired();
 
         // Bicycle
         builder.Entity<Bicycle>().ToTable("Bicycles");
@@ -49,9 +51,11 @@ public class LeadYourWayContext : DbContext
         builder.Entity<Bicycle>().Property(p => p.Description).IsRequired().HasMaxLength(500);
         builder.Entity<Bicycle>().Property(p => p.Price).IsRequired();
         builder.Entity<Bicycle>().Property(p => p.Size).IsRequired().HasMaxLength(60);
-        builder.Entity<Bicycle>().Property(p => p.Model).IsRequired().HasMaxLength(60);
-        builder.Entity<Bicycle>().Property(p => p.Image).IsRequired().HasMaxLength(60);
+        builder.Entity<Bicycle>().Property(p => p.Model).HasMaxLength(60);
+        builder.Entity<Bicycle>().Property(p => p.Image);
         builder.Entity<Bicycle>().Property(p => p.UserId).IsRequired();
+        builder.Entity<Bicycle>().Property(p => p.IsActive).HasDefaultValue(true);
+        builder.Entity<Bicycle>().Property(c => c.DateCreated).IsRequired();
         
         // Card
         builder.Entity<Card>().ToTable("Cards");
@@ -64,7 +68,8 @@ public class LeadYourWayContext : DbContext
         builder.Entity<Card>().Property(p => p.Type).IsRequired().HasMaxLength(60);
         builder.Entity<Card>().Property(p => p.IsActive).HasDefaultValue(true);
         builder.Entity<Card>().Property(p => p.UserId).IsRequired();
-        
+        builder.Entity<Card>().Property(c => c.DateCreated).IsRequired();
+
         // Connections
         builder.Entity<Bicycle>()
             .HasOne(c => c.User)

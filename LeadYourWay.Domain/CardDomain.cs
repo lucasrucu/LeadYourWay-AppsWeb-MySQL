@@ -1,5 +1,4 @@
 ﻿using LeadYourWay.Infrastructure;
-using LeadYourWay.Infrastructure.Context;
 using LeadYourWay.Infrastructure.Models;
 
 namespace LeadYourWay.Domain;
@@ -14,19 +13,32 @@ public class CardDomain : ICardDomain
         _cardInfrastructure = cardInfrastructure;
         _userInfrastructure = userInfrastructure;
     }
-    
+
+    public async Task<List<Card>> GetAllAsync()
+    {
+        return await _cardInfrastructure.GetAllAsync();
+    }
+
+    public List<Card> GetByUserId(int id)
+    {
+        return _cardInfrastructure.GetByUserId(id);
+    }
+
+    public Card GetById(int id)
+    {
+        return _cardInfrastructure.GetById(id);
+    }
+
     public bool save(Card value)
     {
+        IsValidSave(value);
         ExistsByUserId(value.UserId);
-        IsValid(value);
         return _cardInfrastructure.save(value);
     }
     
     public bool update(int id, Card value)
     {
         ExistsById(id);
-        Card card = value;
-        card.Id = id;
         return _cardInfrastructure.update(id, value);
     }
     
@@ -36,7 +48,7 @@ public class CardDomain : ICardDomain
         return _cardInfrastructure.delete(id);
     }
 
-    private void IsValid(Card card)
+    private static void IsValidSave(Card card)
     {
         if (card.Name.Length == 0) throw new Exception("Name is required");
         if (card.Number.Length == 0) throw new Exception("Number is required");
@@ -48,6 +60,7 @@ public class CardDomain : ICardDomain
         if (card.Cvv.Length > 4) throw new Exception("Cvv has to be less than 4 characters");
         if (card.Type.Length > 50) throw new Exception("Type has to be less than 50 characters");
         if (card.ExpirationDate < DateTime.Now.AddDays(1)) throw new Exception("ExpirationDate has to be in the future");
+        if (card.UserId < 0) throw new Exception("UserId is required");
     }
     
     private void ExistsById(int id)

@@ -14,15 +14,14 @@ namespace LeadYourWay.API.Controllers
     public class BicycleController : ControllerBase
     {
         // Injections
-        private IBicycleInfrastructure _bicycleInfrastructure;
-        private IUserInfrastructure _userInfrastructure;
         private IBicycleDomain _bicycleDomain;
         private IMapper _mapper;
         
-        public BicycleController(IBicycleInfrastructure bicycleInfrastructure, IUserInfrastructure userInfrastructure, IBicycleDomain bicycleDomain, IMapper mapper)
+        public BicycleController(
+            IBicycleDomain bicycleDomain, 
+            IMapper mapper
+            )
         {
-            _bicycleInfrastructure = bicycleInfrastructure;
-            _userInfrastructure = userInfrastructure;
             _bicycleDomain = bicycleDomain;
             _mapper = mapper;
         }
@@ -31,21 +30,21 @@ namespace LeadYourWay.API.Controllers
         [HttpGet (Name = "GetBicycle")]
         public List<Bicycle> Get()
         {
-            return _bicycleInfrastructure.GetAll();
+            return _bicycleDomain.GetAll();
         }
 
         // GET: api/Bicycle/5
         [HttpGet("{id}", Name = "GetBicycleById")]
         public Bicycle Get(int id)
         {
-            return _bicycleInfrastructure.GetById(id);
+            return _bicycleDomain.GetById(id);
         }
         
         // GET: api/Bicycle/filterByUserId/5
         [HttpGet("filterByUserId/{id}", Name = "GetBicycleByUserId")]
         public List<Bicycle> GetByUserId(int id)
         {
-            return _bicycleInfrastructure.GetByUserId(id);
+            return _bicycleDomain.GetByUserId(id);
         }
 
         // POST: api/Bicycle
@@ -60,6 +59,7 @@ namespace LeadYourWay.API.Controllers
             else
             {
                 StatusCode(400);
+                throw new Exception("Data was invalid");
             }
         }
 

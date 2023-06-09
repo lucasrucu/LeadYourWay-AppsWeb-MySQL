@@ -1,6 +1,6 @@
 ﻿namespace LeadYourWay.Infrastructure.Models;
 
-public class User : BaseModel
+public class UserUpdateModel
 {
     public string Name { get; set; }
     public string Email { get; set; }
@@ -8,6 +8,4 @@ public class User : BaseModel
     public string Phone { get; set; }
     public string Image { get; set; }
     public DateTime BirthDate { get; set; }
-    public virtual List<Bicycle> Bicycles { get; set; }
-    public virtual List<Card> Cards { get; set; }
 }

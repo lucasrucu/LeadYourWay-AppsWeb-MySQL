@@ -9,6 +9,7 @@ public class RequestToModel : Profile
     public RequestToModel()
     {
         CreateMap<UserRequest, User>();
+        CreateMap<LoginRequest, User>();
         CreateMap<CardRequest, Card>();
         CreateMap<BicycleRequest, Bicycle>();
     }

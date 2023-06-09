@@ -1,16 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using LeadYourWay.API.Request;
 using LeadYourWay.Domain;
 using LeadYourWay.Infrastructure;
 using LeadYourWay.Infrastructure.Models;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace LeadYourWay.API.Controllers
 {
@@ -20,24 +14,15 @@ namespace LeadYourWay.API.Controllers
     public class CardController : ControllerBase
     {
         // Injections
-        private ICardInfrastructure _cardInfrastructure;
-        private IUserInfrastructure _userInfrastructure;
         private ICardDomain _cardDomain;
-        private IUserDomain _userDomain;
         private IMapper _mapper;
         
         public CardController(
-            ICardInfrastructure cardInfrastructure, 
-            IUserInfrastructure userInfrastructure, 
             ICardDomain cardDomain, 
-            IUserDomain userDomain,
             IMapper mapper
             )
         {
-            _cardInfrastructure = cardInfrastructure;
-            _userInfrastructure = userInfrastructure;
             _cardDomain = cardDomain;
-            _userDomain = userDomain;
             _mapper = mapper;
         }
         
@@ -45,7 +30,7 @@ namespace LeadYourWay.API.Controllers
         [HttpGet (Name = "GetCard")]
         public async Task<List<Card>> GetAsync()
         {
-            var cards = await _cardInfrastructure.GetAllAsync();
+            var cards = await _cardDomain.GetAllAsync();
             return cards;
         }
 
@@ -53,7 +38,7 @@ namespace LeadYourWay.API.Controllers
         [HttpGet("{id}", Name = "Get")]
         public Card Get(int id)
         {
-            var card = _cardInfrastructure.GetById(id);
+            var card = _cardDomain.GetById(id);
             return card;
         }
         
@@ -61,7 +46,7 @@ namespace LeadYourWay.API.Controllers
         [HttpGet("filterByUserId/{id}", Name = "GetByUserId")]
         public List<Card> GetByUserId(int id)
         {
-            var cards = _cardInfrastructure.GetByUserId(id);
+            var cards = _cardDomain.GetByUserId(id);
             return cards;
         }
 
@@ -77,6 +62,7 @@ namespace LeadYourWay.API.Controllers
             else
             {
                 StatusCode(400);
+                throw new Exception("Data was invalid");
             }
         }
 
