@@ -98,4 +98,8 @@ public class UserMySQLInfrastructure : IUserInfrastructure
         return true;
     }
 
+    public async Task<User> GetByUsername(string username)
+    {
+        return await _leadYourWayContext.Users.SingleAsync(u => u.Email == username);
+    }
 }

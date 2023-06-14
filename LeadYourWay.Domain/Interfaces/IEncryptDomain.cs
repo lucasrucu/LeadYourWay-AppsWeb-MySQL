@@ -2,6 +2,6 @@
 
 public interface IEncryptDomain
 {
-    public string Encrypt(string value);
-    public string Decrypt(string value);
+    public string Encrypt(string password);
+    public string Decrypt(string password);
 }

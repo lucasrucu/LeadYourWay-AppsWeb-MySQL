@@ -65,6 +65,11 @@ public class UserDomain : IUserDomain
         return _userInfrastructure.delete(id);
     }
 
+    public async Task<User> GetByUsername(string username)
+    {
+        return await _userInfrastructure.GetByUsername(username);
+    }
+
     private static void IsValidSave(User user)
     {
         if (user.Name.Length == 0) throw new Exception("Name is required");

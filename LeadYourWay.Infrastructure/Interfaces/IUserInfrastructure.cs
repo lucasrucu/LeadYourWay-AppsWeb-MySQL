@@ -14,4 +14,5 @@ public interface IUserInfrastructure
     public bool save(User user);
     public bool update(int id, UserUpdateModel user);
     public bool delete(int id);
+    Task<User> GetByUsername(string username);
 }

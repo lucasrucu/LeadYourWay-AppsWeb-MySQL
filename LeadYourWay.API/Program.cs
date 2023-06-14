@@ -1,7 +1,9 @@
 using LeadYourWay.API.Mapper;
+using LeadYourWay.API.Middleware;
 using LeadYourWay.Domain;
 using LeadYourWay.Infrastructure;
 using LeadYourWay.Infrastructure.Context;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,6 +43,14 @@ builder.Services.AddCors(options =>
 var connectionString = builder.Configuration.GetConnectionString("LeadYourWayConnection");
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
 
+// JWT
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+});
+
 builder.Services.AddDbContext<LeadYourWayContext>(
     dbContextOptions =>
     {
@@ -72,7 +82,14 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // Enable CORS globally
-app.UseCors("AllowOrigin");
+app.UseCors(x => x
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
+
+app.UseMiddleware<JwtMiddleware>();
+
+app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
