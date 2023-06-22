@@ -13,3 +13,5 @@ C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-My
 C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Domain\obj\Debug\net7.0\refint\LeadYourWay.Domain.dll
 C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Domain\obj\Debug\net7.0\LeadYourWay.Domain.pdb
 C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Domain\obj\Debug\net7.0\ref\LeadYourWay.Domain.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Domain\bin\Debug\net7.0\LeadYourWay.Shared.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Domain\bin\Debug\net7.0\LeadYourWay.Shared.pdb

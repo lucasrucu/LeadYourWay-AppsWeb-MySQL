@@ -21,7 +21,7 @@ public class LeadYourWayContext : DbContext
         if (!optionsBuilder.IsConfigured)
         {
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
-            optionsBuilder.UseMySql("Server=sql10.freemysqlhosting.net,3306;Uid=sql10624180;Pwd=ZePeyx6ZNS;Database=sql10624180;", serverVersion);
+            optionsBuilder.UseMySql("Server=localhost,3306;Uid=root;Pwd=1234;Database=db_leadyourway_appsweb;", serverVersion);
         }
     }
     
