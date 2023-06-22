@@ -2,6 +2,16 @@
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/FiltersState/=SpellingFilter/@EntryIndexedValue">On</s:String>
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/FiltersState/=NamingFilter/@EntryIndexedValue">On</s:String>
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/FiltersState/=CodeStyle/@EntryIndexedValue">On</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b7e8375f_002Daffa_002D4721_002D9e52_002Dd9216dd12bab/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;LeadYourWay.Domain.Test&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Domain.Test" Presentation="&amp;lt;LeadYourWay.Domain.Test&amp;gt;" /&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=32420fa2_002D858c_002D4908_002D9f42_002D5c852862679c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CardDomainUnitTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::BA6233CC-A12C-4CDA-997C-A5F066207B7C::net7.0::LeadYourWay.Domain.Test.CardDomainUnitTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::BA6233CC-A12C-4CDA-997C-A5F066207B7C::net7.0::LeadYourWay.Domain.Test.BicycleDomainUnitTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::BA6233CC-A12C-4CDA-997C-A5F066207B7C::net7.0::LeadYourWay.Domain.Test.UserDomainUnitTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b7e8375f_002Daffa_002D4721_002D9e52_002Dd9216dd12bab/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;LeadYourWay.Domain.Test&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::BA6233CC-A12C-4CDA-997C-A5F066207B7C::net7.0::LeadYourWay.Domain.Test.UserDomainUnitTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::BA6233CC-A12C-4CDA-997C-A5F066207B7C::net7.0::LeadYourWay.Domain.Test.CardDomainUnitTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

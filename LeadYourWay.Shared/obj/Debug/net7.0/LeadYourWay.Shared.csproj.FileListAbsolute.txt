@@ -1,12 +1,24 @@
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\bin\Debug\net7.0\LeadYourWay.Shared.deps.json
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\bin\Debug\net7.0\LeadYourWay.Shared.dll
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\bin\Debug\net7.0\LeadYourWay.Shared.pdb
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\obj\Debug\net7.0\LeadYourWay.Shared.csproj.AssemblyReference.cache
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\obj\Debug\net7.0\LeadYourWay.Shared.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\obj\Debug\net7.0\LeadYourWay.Shared.AssemblyInfoInputs.cache
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\obj\Debug\net7.0\LeadYourWay.Shared.AssemblyInfo.cs
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\obj\Debug\net7.0\LeadYourWay.Shared.csproj.CoreCompileInputs.cache
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\obj\Debug\net7.0\LeadYourWay.Shared.dll
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\obj\Debug\net7.0\refint\LeadYourWay.Shared.dll
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\obj\Debug\net7.0\LeadYourWay.Shared.pdb
-C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Shared\obj\Debug\net7.0\ref\LeadYourWay.Shared.dll
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/bin/Debug/net7.0/LeadYourWay.Shared.deps.json
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/bin/Debug/net7.0/LeadYourWay.Shared.dll
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/bin/Debug/net7.0/LeadYourWay.Shared.pdb
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.csproj.AssemblyReference.cache
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.AssemblyInfoInputs.cache
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.AssemblyInfo.cs
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.csproj.CoreCompileInputs.cache
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.dll
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/obj/Debug/net7.0/refint/LeadYourWay.Shared.dll
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.pdb
+C:/Users/ruizc/Documents/UPC/Ciclo V/6_LeadYourWay/Github/LeadYourWay-AppsWeb-MySQL Rev 1/LeadYourWay-AppsWeb-MySQL Rev 0/LeadYourWay.Shared/obj/Debug/net7.0/ref/LeadYourWay.Shared.dll
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/bin/Debug/net7.0/LeadYourWay.Shared.deps.json
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/bin/Debug/net7.0/LeadYourWay.Shared.dll
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/bin/Debug/net7.0/LeadYourWay.Shared.pdb
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.csproj.AssemblyReference.cache
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.AssemblyInfoInputs.cache
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.AssemblyInfo.cs
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.csproj.CoreCompileInputs.cache
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.dll
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/obj/Debug/net7.0/refint/LeadYourWay.Shared.dll
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/obj/Debug/net7.0/LeadYourWay.Shared.pdb
+/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/obj/Debug/net7.0/ref/LeadYourWay.Shared.dll

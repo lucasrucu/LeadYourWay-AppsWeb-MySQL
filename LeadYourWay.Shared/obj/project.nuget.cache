@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "x9IKVLilRGWb+5v/piJqsL8psUUaT6XuvVHA3VlK35OH6goOoXgU3aG2WXAaMEcb62nAKXRCfy3pNZWV7QEoAA==",
+  "dgSpecHash": "GPUIPrBS22+ruGkYe5fuwgjGyFWFsqxnynzfcO22y33rWr5nAkSa9ierjwx2ZYWINAGDcc9sfb7UFScMyRy/Fw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ruizc\\Documents\\UPC\\Ciclo V\\6_LeadYourWay\\Github\\LeadYourWay-AppsWeb-MySQL Rev 1\\LeadYourWay-AppsWeb-MySQL Rev 0\\LeadYourWay.Shared\\LeadYourWay.Shared.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/spigi/RiderProjects/LeadYourWay-AppsWeb-MySQL/LeadYourWay.Shared/LeadYourWay.Shared.csproj",
+  "expectedPackageFiles": [
+    "/home/spigi/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.5/microsoft.aspnetcore.app.ref.7.0.5.nupkg.sha512"
+  ],
   "logs": []
 }
