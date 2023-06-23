@@ -7,27 +7,29 @@ public class LeadYourWayContext : DbContext
 {
     public LeadYourWayContext()
     {
-        
     }
-    
+
     public LeadYourWayContext(DbContextOptions<LeadYourWayContext> options) : base(options)
     {
     }
+
     public DbSet<User> Users { get; set; }
     public DbSet<Bicycle> Bicycles { get; set; }
     public DbSet<Card> Cards { get; set; }
+    public DbSet<Rent> Rents { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
         {
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
-            optionsBuilder.UseMySql("Server=localhost,3306;Uid=root;Pwd=1234;Database=db_leadyourway_appsweb;", serverVersion);
+            optionsBuilder.UseMySql("Server=localhost,3306;Uid=root;Pwd=1234;Database=db_leadyourway_appsweb;",
+                serverVersion);
         }
     }
-    
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
-
         base.OnModelCreating(builder);
 
         // User
@@ -56,7 +58,7 @@ public class LeadYourWayContext : DbContext
         builder.Entity<Bicycle>().Property(p => p.UserId).IsRequired();
         builder.Entity<Bicycle>().Property(p => p.IsActive).HasDefaultValue(true);
         builder.Entity<Bicycle>().Property(c => c.DateCreated).IsRequired();
-        
+
         // Card
         builder.Entity<Card>().ToTable("Cards");
         builder.Entity<Card>().HasKey(p => p.Id);
@@ -70,6 +72,18 @@ public class LeadYourWayContext : DbContext
         builder.Entity<Card>().Property(p => p.UserId).IsRequired();
         builder.Entity<Card>().Property(c => c.DateCreated).IsRequired();
 
+        // Rent
+        builder.Entity<Rent>().ToTable("Rents");
+        builder.Entity<Rent>().HasKey(p => p.Id);
+        builder.Entity<Rent>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Rent>().Property(p => p.StartDate).IsRequired();
+        builder.Entity<Rent>().Property(p => p.EndDate).IsRequired();
+        builder.Entity<Rent>().Property(p => p.TotalPrice).IsRequired();
+        builder.Entity<Rent>().Property(p => p.IsActive).HasDefaultValue(true);
+        builder.Entity<Rent>().Property(c => c.DateCreated).HasDefaultValue(DateTime.Now);
+        builder.Entity<Rent>().Property(p => p.BicycleId).IsRequired();
+        builder.Entity<Rent>().Property(p => p.CardId).IsRequired();
+
         // Connections
         builder.Entity<Bicycle>()
             .HasOne(c => c.User)
@@ -81,5 +95,20 @@ public class LeadYourWayContext : DbContext
             .WithMany(e => e.Cards)
             .HasForeignKey(e => e.UserId)
             .IsRequired();
+        builder.Entity<Rent>()
+            .HasOne(b => b.Bicycle)
+            .WithMany(e => e.Rents)
+            .HasForeignKey(e => e.BicycleId)
+            .IsRequired();
+        builder.Entity<Rent>()
+            .HasOne(c => c.Card)
+            .WithMany(e => e.Rents)
+            .HasForeignKey(e => e.CardId)
+            .IsRequired();
+        // builder.Entity<Bicycle>()
+        //     .HasMany(c => c.Rents)
+        //     .WithOne(e => e.Bicycle)
+        //     .HasForeignKey(e => e.BicycleId)
+        //     .IsRequired();
     }
 }

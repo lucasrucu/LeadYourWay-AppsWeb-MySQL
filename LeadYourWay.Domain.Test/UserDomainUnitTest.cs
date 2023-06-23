@@ -10,17 +10,17 @@ public class UserDomainUnitTest
     public void Test1()
     {
         // Arrange
-        User user = new User()
+        var user = new User()
         {
             Name = "Test"
         };
         var userInfrastructure = new Mock<IUserInfrastructure>();
         userInfrastructure.Setup(t => t.save(user)).Returns(true);
-        UserDomain userDomain = new UserDomain(userInfrastructure.Object);
-        
+        var userDomain = new UserDomain(userInfrastructure.Object);
+
         // Act
         var result = userDomain.save(user);
-        
+
         // Assert
         Assert.True(result);
     }
@@ -29,13 +29,13 @@ public class UserDomainUnitTest
     public void Test2()
     {
         // Arrange
-        User user = new User()
+        var user = new User()
         {
             Name = "Test123456789123456789123456789123456789123456789123"
         };
         var userInfrastructure = new Mock<IUserInfrastructure>();
         //userInfrastructure.Setup(t => t.save(user)).Returns(true);
-        UserDomain userDomain = new UserDomain(userInfrastructure.Object);
+        var userDomain = new UserDomain(userInfrastructure.Object);
 
         // Act
         var ex = Assert.Throws<Exception>(() => userDomain.save(user));
@@ -43,5 +43,4 @@ public class UserDomainUnitTest
         // Assert
         Assert.Equal("Name is not valid", ex.Message);
     }
-
 }

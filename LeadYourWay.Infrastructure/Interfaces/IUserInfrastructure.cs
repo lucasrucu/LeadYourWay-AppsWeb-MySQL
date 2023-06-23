@@ -12,7 +12,7 @@ public interface IUserInfrastructure
     public bool ExistsByEmail(string email);
     public bool ExistsByEmailAndPassword(string email, string password);
     public bool save(User user);
-    public bool update(int id, UserUpdateModel user);
+    public bool update(int id, UserDto user);
     public bool delete(int id);
     Task<User> GetByUsername(string username);
 }

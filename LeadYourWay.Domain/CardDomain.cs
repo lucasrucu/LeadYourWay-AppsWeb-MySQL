@@ -7,7 +7,7 @@ public class CardDomain : ICardDomain
 {
     private ICardInfrastructure _cardInfrastructure;
     private IUserInfrastructure _userInfrastructure;
-    
+
     public CardDomain(ICardInfrastructure cardInfrastructure, IUserInfrastructure userInfrastructure)
     {
         _cardInfrastructure = cardInfrastructure;
@@ -35,13 +35,13 @@ public class CardDomain : ICardDomain
         ExistsByUserId(value.UserId);
         return _cardInfrastructure.save(value);
     }
-    
+
     public bool update(int id, Card value)
     {
         ExistsById(id);
         return _cardInfrastructure.update(id, value);
     }
-    
+
     public bool delete(int id)
     {
         ExistsById(id);
@@ -59,15 +59,16 @@ public class CardDomain : ICardDomain
         if (card.Number.Length > 50) throw new Exception("Number has to be less than 50 characters");
         if (card.Cvv.Length > 4) throw new Exception("Cvv has to be less than 4 characters");
         if (card.Type.Length > 50) throw new Exception("Type has to be less than 50 characters");
-        if (card.ExpirationDate < DateTime.Now.AddDays(1)) throw new Exception("ExpirationDate has to be in the future");
+        if (card.ExpirationDate < DateTime.Now.AddDays(1))
+            throw new Exception("ExpirationDate has to be in the future");
         if (card.UserId < 0) throw new Exception("UserId is required");
     }
-    
+
     private void ExistsById(int id)
     {
         if (!_cardInfrastructure.ExistsById(id)) throw new Exception("Card not found");
     }
-    
+
     private void ExistsByUserId(int id)
     {
         if (!_userInfrastructure.ExistsById(id)) throw new Exception("User not fooo0und");

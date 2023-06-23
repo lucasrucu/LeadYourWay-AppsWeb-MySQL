@@ -12,4 +12,5 @@ public class Bicycle : BaseModel
     public string Image { get; set; }
     public int UserId { get; set; }
     public virtual User User { get; set; } = null!;
+    public List<Rent> Rents { get; set; }
 }

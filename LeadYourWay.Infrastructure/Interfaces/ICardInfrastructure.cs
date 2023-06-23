@@ -4,7 +4,7 @@ namespace LeadYourWay.Infrastructure;
 
 public interface ICardInfrastructure
 {
-    Task<List<Card>> GetAllAsync(); 
+    Task<List<Card>> GetAllAsync();
     List<Card> GetByUserId(int id);
     Card GetById(int id);
     public bool ExistsById(int id);

@@ -12,5 +12,6 @@ public class RequestToModel : Profile
         CreateMap<LoginRequest, User>();
         CreateMap<CardRequest, Card>();
         CreateMap<BicycleRequest, Bicycle>();
+        CreateMap<RentRequest, Rent>();
     }
 }

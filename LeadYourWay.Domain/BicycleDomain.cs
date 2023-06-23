@@ -1,4 +1,6 @@
-﻿using LeadYourWay.Infrastructure;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+using LeadYourWay.Infrastructure;
 using LeadYourWay.Infrastructure.Models;
 
 namespace LeadYourWay.Domain;
@@ -7,11 +9,13 @@ public class BicycleDomain : IBicycleDomain
 {
     private IBicycleInfrastructure _bicycleInfrastructure;
     private IUserInfrastructure _userInfrastructure;
-    
-    public BicycleDomain(IBicycleInfrastructure bicycleInfrastructure, IUserInfrastructure userInfrastructure)
+    private IRentInfrastructure _rentInfrastructure;
+
+    public BicycleDomain(IBicycleInfrastructure bicycleInfrastructure, IUserInfrastructure userInfrastructure, IRentInfrastructure rentInfrastructure)
     {
         _bicycleInfrastructure = bicycleInfrastructure;
         _userInfrastructure = userInfrastructure;
+        _rentInfrastructure = rentInfrastructure;
     }
 
     public List<Bicycle> GetAll()
@@ -22,6 +26,40 @@ public class BicycleDomain : IBicycleDomain
     public List<Bicycle> GetByUserId(int id)
     {
         return _bicycleInfrastructure.GetByUserId(id);
+    }
+
+    public List<Bicycle> getAvailableBicycles(DateTime start, DateTime end)
+    {
+        List<Bicycle> availableBicycles = new();
+        List<Bicycle> bicycles = _bicycleInfrastructure.GetAll();
+        
+        JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            ReferenceHandler = ReferenceHandler.Preserve // Preserve object references to handle cycles
+        };
+        
+        foreach (Bicycle bike in bicycles)
+        {
+            bool isAvailable = true;
+            List<Rent> rents = _rentInfrastructure.GetByBikeId(bike.Id);
+            foreach (Rent rent in rents)
+            {
+                if (rent.StartDate <= start && start <= rent.EndDate) 
+                    isAvailable = false;
+                if (rent.StartDate <= end && end <= rent.EndDate)
+                    isAvailable = false;
+                if (start <= rent.StartDate && rent.StartDate <= end) 
+                    isAvailable = false;
+                if (start <= rent.EndDate && rent.EndDate <= end)
+                    isAvailable = false;
+            }
+            
+            if (isAvailable)
+                availableBicycles.Add(bike);
+        }
+        string serializedBicycles = JsonSerializer.Serialize(availableBicycles, options);
+
+        return bicycles;
     }
 
     public Bicycle GetById(int id)
@@ -48,7 +86,7 @@ public class BicycleDomain : IBicycleDomain
         ExistsById(id);
         return _bicycleInfrastructure.delete(id);
     }
-    
+
     private static void IsValidSave(Bicycle bicycle)
     {
         if (bicycle.Name.Length > 50) throw new Exception("Bicycle name is too long");
@@ -56,12 +94,12 @@ public class BicycleDomain : IBicycleDomain
         if (bicycle.Price < 0) throw new Exception("Bicycle price is invalid");
         if (bicycle.UserId < 0) throw new Exception("Bicycle user id is invalid");
     }
-    
+
     private void ExistsById(int id)
     {
-        if (!_bicycleInfrastructure.ExistsByID(id)) throw new Exception("Bicycle not found");
+        if (!_bicycleInfrastructure.ExistsById(id)) throw new Exception("Bicycle not found");
     }
-    
+
     private void ExistsByUserId(int id)
     {
         if (!_userInfrastructure.ExistsById(id)) throw new Exception("User not found");

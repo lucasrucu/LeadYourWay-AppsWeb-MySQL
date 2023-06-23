@@ -34,7 +34,7 @@ public class CardMySQLInfrastructure : ICardInfrastructure
             throw new Exception(e.Message);
         }
     }
-    
+
     public bool ExistsById(int id)
     {
         return _context.Cards.Any(e => e.Id == id && e.IsActive);
@@ -59,7 +59,7 @@ public class CardMySQLInfrastructure : ICardInfrastructure
 
     public bool delete(int id)
     {
-        Card card = _context.Cards.Find(id);
+        var card = _context.Cards.Find(id);
         card.IsActive = false;
         _context.Cards.Update(card);
         _context.SaveChanges();

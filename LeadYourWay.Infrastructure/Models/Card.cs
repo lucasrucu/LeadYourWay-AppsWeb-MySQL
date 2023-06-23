@@ -11,4 +11,5 @@ public class Card : BaseModel
     public string Type { get; set; }
     public int UserId { get; set; }
     public virtual User User { get; set; } = null!;
+    public List<Rent> Rents { get; set; }
 }

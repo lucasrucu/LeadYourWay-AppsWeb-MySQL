@@ -22,6 +22,10 @@ builder.Services.AddScoped<IBicycleInfrastructure, BicycleMySQLInfrastructure>()
 builder.Services.AddScoped<IBicycleDomain, BicycleDomain>();
 builder.Services.AddScoped<ICardInfrastructure, CardMySQLInfrastructure>();
 builder.Services.AddScoped<ICardDomain, CardDomain>();
+builder.Services.AddScoped<IRentInfrastructure, RentMySQLInfrastructure>();
+builder.Services.AddScoped<IRentDomain, RentDomain>();
+builder.Services.AddScoped<ITokenDomain, TokenDomain>();
+builder.Services.AddScoped<IEncryptDomain, EncryptDomain>();
 builder.Services.AddAutoMapper(
     typeof(ModelToResponse),
     typeof(RequestToModel)
@@ -44,12 +48,12 @@ var connectionString = builder.Configuration.GetConnectionString("LeadYourWayCon
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
 
 // JWT
-builder.Services.AddAuthentication(options =>
+/*builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-});
+});*/
 
 builder.Services.AddDbContext<LeadYourWayContext>(
     dbContextOptions =>
@@ -57,14 +61,14 @@ builder.Services.AddDbContext<LeadYourWayContext>(
         dbContextOptions.UseMySql(connectionString,
             ServerVersion.AutoDetect(connectionString),
             options => options.EnableRetryOnFailure(
-                maxRetryCount: 5,
-                maxRetryDelay: System.TimeSpan.FromSeconds(30),
-                errorNumbersToAdd: null)
+                5,
+                TimeSpan.FromSeconds(30),
+                null)
         );
     });
 
 var app = builder.Build();
-    
+
 // Create database if not exists
 using (var scope = app.Services.CreateScope())
 using (var context = scope.ServiceProvider.GetService<LeadYourWayContext>())
@@ -87,7 +91,7 @@ app.UseCors(x => x
     .AllowAnyMethod()
     .AllowAnyHeader());
 
-app.UseMiddleware<JwtMiddleware>();
+/*app.UseMiddleware<JwtMiddleware>();*/
 
 app.UseHttpsRedirection();
 

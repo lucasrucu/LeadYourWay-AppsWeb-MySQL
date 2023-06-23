@@ -6,12 +6,12 @@ namespace LeadYourWay.Domain;
 public class UserDomain : IUserDomain
 {
     private IUserInfrastructure _userInfrastructure;
-    
+
     public UserDomain(IUserInfrastructure userInfrastructure)
     {
         _userInfrastructure = userInfrastructure;
     }
-    
+
     public async Task<List<User>> GetAllAsync()
     {
         return await _userInfrastructure.GetAllAsync();
@@ -28,37 +28,33 @@ public class UserDomain : IUserDomain
         try
         {
             if (_userInfrastructure.ExistsByEmailAndPassword(user.Email, user.Password))
-            {
                 return _userInfrastructure.GetUserIdByEmailAndPassword(user);
-            }
         }
         catch (Exception e)
         {
             throw new Exception("No se pudo realizar el pedido");
         }
+
         throw new Exception("El usuario o la contraseña esta mal");
     }
 
 
     public bool save(User value)
     {
-        if (ExistsByEmailValidation(value.Email))
-        {
-            throw new Exception("A user already exists with this email");
-        }
+        if (ExistsByEmailValidation(value.Email)) throw new Exception("A user already exists with this email");
         IsValidSave(value);
         value.DateCreated = DateTime.Now;
         return _userInfrastructure.save(value);
     }
 
-    public bool update(int id, UserUpdateModel value)
+    public bool update(int id, UserDto value)
     {
         if (!ExistsByIdValidation(id)) throw new Exception("The user doesnt exist");
         IsValidUpdate(value);
         if (!AllowedEmailUpdate(id, value)) throw new Exception("A user already exists with this email");
         return _userInfrastructure.update(id, value);
     }
-    
+
     public bool delete(int id)
     {
         ExistsById(id);
@@ -82,14 +78,14 @@ public class UserDomain : IUserDomain
         if (user.BirthDate > DateTime.Now.AddYears(-15)) throw new Exception("User has to be at least 15 years old");
     }
 
-    private bool AllowedEmailUpdate(int id, UserUpdateModel user)
-    { 
+    private bool AllowedEmailUpdate(int id, UserDto user)
+    {
         if (_userInfrastructure.ExistsByIdAndEmail(id, user.Email)) return true;
         if (ExistsByEmailValidation(user.Email)) throw new Exception("A user already exists with this email");
         return true;
     }
 
-    
+
     private bool ExistsByEmailValidation(string email)
     {
         return _userInfrastructure.ExistsByEmail(email);
@@ -100,14 +96,14 @@ public class UserDomain : IUserDomain
     {
         return _userInfrastructure.ExistsById(id);
     }
-    
-    private static void IsValidUpdate(UserUpdateModel user)
+
+    private static void IsValidUpdate(UserDto user)
     {
         if (user.Name.Length > 50) throw new Exception("Name has to be less than 50 characters");
         if (user.Email.Length > 50) throw new Exception("Email has to be less than 50 characters");
         if (user.Phone.Length > 15) throw new Exception("Phone has to be less than 15 characters");
     }
-    
+
     private bool ExistsById(int id)
     {
         try

@@ -16,7 +16,8 @@ public class TokenDomain : ITokenDomain
         {
             Subject = new ClaimsIdentity(new[] { new Claim("username", username) }),
             Expires = DateTime.UtcNow.AddDays(1),
-            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            SigningCredentials =
+                new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };
         var token = tokenHandler.CreateToken(tokenDescriptor);
         return tokenHandler.WriteToken(token);
@@ -24,7 +25,7 @@ public class TokenDomain : ITokenDomain
 
     public string ValidateJwt(string token)
     {
-        if (token == null) 
+        if (token == null)
             return null;
 
         var tokenHandler = new JwtSecurityTokenHandler();
@@ -39,10 +40,10 @@ public class TokenDomain : ITokenDomain
                 ValidateAudience = false,
                 // set clockskew to zero so tokens expire exactly at token expiration time (instead of 5 minutes later)
                 ClockSkew = TimeSpan.Zero
-            }, out SecurityToken validatedToken);
+            }, out var validatedToken);
 
             var jwtToken = (JwtSecurityToken)validatedToken;
-            var username =jwtToken.Claims.First(x => x.Type == "username").Value;
+            var username = jwtToken.Claims.First(x => x.Type == "username").Value;
 
             // return user id from JWT token if validation successful
             return username;

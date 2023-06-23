@@ -6,15 +6,15 @@ namespace LeadYourWay.Infrastructure;
 public class BicycleMySQLInfrastructure : IBicycleInfrastructure
 {
     private LeadYourWayContext _leadYourWayContext;
-    
+
     public BicycleMySQLInfrastructure(LeadYourWayContext leadYourWayContext)
     {
         _leadYourWayContext = leadYourWayContext;
     }
-    
+
     public List<Bicycle> GetAll()
     {
-        return _leadYourWayContext.Bicycles.Where(x=>x.IsActive).ToList();
+        return _leadYourWayContext.Bicycles.Where(x => x.IsActive).ToList();
     }
 
     public List<Bicycle> GetByUserId(int id)
@@ -34,7 +34,7 @@ public class BicycleMySQLInfrastructure : IBicycleInfrastructure
         }
     }
 
-    public bool ExistsByID(int id)
+    public bool ExistsById(int id)
     {
         return _leadYourWayContext.Bicycles.Any(e => e.Id == id && e.IsActive);
     }
@@ -58,7 +58,7 @@ public class BicycleMySQLInfrastructure : IBicycleInfrastructure
 
     public bool delete(int id)
     {
-        Bicycle bicycle =  _leadYourWayContext.Bicycles.Find(id);
+        var bicycle = _leadYourWayContext.Bicycles.Find(id);
         bicycle.IsActive = false;
         _leadYourWayContext.Bicycles.Update(bicycle);
         _leadYourWayContext.SaveChanges();

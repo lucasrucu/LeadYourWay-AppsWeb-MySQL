@@ -7,12 +7,12 @@ namespace LeadYourWay.Infrastructure;
 public class UserMySQLInfrastructure : IUserInfrastructure
 {
     private LeadYourWayContext _leadYourWayContext;
-    
+
     public UserMySQLInfrastructure(LeadYourWayContext leadYourWayContext)
     {
         _leadYourWayContext = leadYourWayContext;
     }
-    
+
     public async Task<List<User>> GetAllAsync()
     {
         return await _leadYourWayContext.Users.Where(c => c.IsActive).ToListAsync();
@@ -25,7 +25,7 @@ public class UserMySQLInfrastructure : IUserInfrastructure
             return _leadYourWayContext.Users.FirstOrDefault(x => x.Id == id && x.IsActive);
         }
         catch (Exception e)
-        {            
+        {
             throw new Exception(e.Message);
         }
     }
@@ -56,7 +56,7 @@ public class UserMySQLInfrastructure : IUserInfrastructure
     {
         return _leadYourWayContext.Users.Any(e => e.Email == email && e.IsActive == true);
     }
-    
+
     public bool ExistsByEmailAndPassword(string email, string password)
     {
         return _leadYourWayContext.Users.Any(
@@ -73,9 +73,9 @@ public class UserMySQLInfrastructure : IUserInfrastructure
         return true;
     }
 
-    public bool update(int id, UserUpdateModel value)
+    public bool update(int id, UserDto value)
     {
-        User user = _leadYourWayContext.Users.Find(id);
+        var user = _leadYourWayContext.Users.Find(id);
         user.Name = value.Name;
         user.Email = value.Email;
         user.Password = value.Password;
@@ -91,7 +91,7 @@ public class UserMySQLInfrastructure : IUserInfrastructure
 
     public bool delete(int id)
     {
-        User user =  _leadYourWayContext.Users.Find(id);
+        var user = _leadYourWayContext.Users.Find(id);
         user.IsActive = false;
         _leadYourWayContext.Users.Update(user);
         _leadYourWayContext.SaveChanges();
