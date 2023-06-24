@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LeadYourWay.API.Controllers;
 
 [EnableCors("AllowOrigin")]
-[Route("api/[controller]")]
+[Route("api/card")]
 [ApiController]
 public class CardController : ControllerBase
 {

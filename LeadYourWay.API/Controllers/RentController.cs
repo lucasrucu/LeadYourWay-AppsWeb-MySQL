@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LeadYourWay.API.Controllers
 {
     [EnableCors("AllowOrigin")]
-    [Route("api/[controller]")]
+    [Route("api/rent")]
     [ApiController]
     public class RentController : ControllerBase
     {
@@ -27,12 +27,19 @@ namespace LeadYourWay.API.Controllers
             _mapper = mapper;
         }
         
-        // POST: api/Rent
+        // GET: api/rent/available
+        [HttpGet("available/{bikeId}", Name = "GetAvailableBicycles")]
+        public bool GetAvailableBicycles(int bikeId, DateTime start, DateTime end)
+        {
+            return _rentDomain.AvailableBicycle(bikeId, start, end);
+        }
+        
+        // POST: api/rent
         [HttpPost (Name = "PostRent")]
         public bool Post([FromBody] RentRequest rentDto)
         {
             var rent = _mapper.Map<RentRequest, Rent>(rentDto);
-            return _rentDomain.save(rent);
+            return _rentDomain.Save(rent);
         }
     }
 }

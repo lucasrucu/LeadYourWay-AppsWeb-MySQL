@@ -59,7 +59,7 @@ public class BicycleDomain : IBicycleDomain
         }
         string serializedBicycles = JsonSerializer.Serialize(availableBicycles, options);
 
-        return bicycles;
+        return availableBicycles;
     }
 
     public Bicycle GetById(int id)

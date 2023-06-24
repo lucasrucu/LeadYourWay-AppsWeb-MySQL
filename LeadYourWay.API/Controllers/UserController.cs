@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LeadYourWay.API;
 
 [EnableCors("AllowOrigin")]
-[Route("api/[controller]")]
+[Route("api/user")]
 [ApiController]
 public class UserController : ControllerBase
 {

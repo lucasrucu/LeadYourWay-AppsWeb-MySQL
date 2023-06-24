@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LeadYourWay.API.Controllers;
 
 [EnableCors("AllowOrigin")]
-[Route("api/[controller]")]
+[Route("api/bicycle")]
 [ApiController]
 public class BicycleController : ControllerBase
 {
@@ -47,12 +47,12 @@ public class BicycleController : ControllerBase
         return _bicycleDomain.GetByUserId(id);
     }
     
-    // GET: api/Bicycle/available
+    /*// GET: api/Bicycle/available
     [HttpGet("available", Name = "GetAvailableBicycles")]
     public List<Bicycle> GetAvailableBicycles(DateTime start, DateTime end)
     {
         return _bicycleDomain.getAvailableBicycles(start, end);
-    }
+    }*/
 
     // POST: api/Bicycle
     [HttpPost(Name = "PostBicycle")]

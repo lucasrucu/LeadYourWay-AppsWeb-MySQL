@@ -23,10 +23,44 @@ public class RentDomain : IRentDomain
         _cardInfrastructure = cardInfrastructure;
     }
 
-    public bool save(Rent rent)
+    public bool Save(Rent rent)
     {
         ValidateRent(rent);
         return _rentInfrastructure.save(rent);
+    }
+
+    public bool AvailableBicycle(int id, DateTime start, DateTime end)
+    {
+        try
+        {
+            ValidateBikeAvailability(id, start, end);
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
+    public List<Bicycle> GetAvailableBicycles(DateTime start, DateTime end)
+    {
+        List<Bicycle> availableBicycles = new();
+        List<Bicycle> bicycles = _bicycleInfrastructure.GetAll();
+
+        foreach (Bicycle bike in bicycles)
+        {
+            try
+            {
+                ValidateBikeAvailability(bike.Id, start, end);
+                availableBicycles.Add(bike);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        return availableBicycles;
     }
 
     private void ExistUser(int id)
