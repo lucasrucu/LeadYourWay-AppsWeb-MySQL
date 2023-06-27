@@ -2,6 +2,7 @@
 using System.Text.Json.Serialization;
 using LeadYourWay.Infrastructure;
 using LeadYourWay.Infrastructure.Models;
+using Microsoft.IdentityModel.Tokens;
 
 namespace LeadYourWay.Domain;
 
@@ -89,6 +90,7 @@ public class BicycleDomain : IBicycleDomain
 
     private static void IsValidSave(Bicycle bicycle)
     {
+        if (bicycle.Name.IsNullOrEmpty()) throw new Exception("Bicycle name is required");
         if (bicycle.Name.Length > 50) throw new Exception("Bicycle name is too long");
         if (bicycle.Description.Length > 200) throw new Exception("Bicycle description is too long");
         if (bicycle.Price < 0) throw new Exception("Bicycle price is invalid");

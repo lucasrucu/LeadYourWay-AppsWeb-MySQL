@@ -102,4 +102,13 @@ public class UserMySQLInfrastructure : IUserInfrastructure
     {
         return await _leadYourWayContext.Users.SingleAsync(u => u.Email == username);
     }
+
+    public async Task<int> Signup(User user)
+    {
+        user.DateCreated = DateTime.Now;
+        user.Roles = "admin";
+        _leadYourWayContext.Users.Add(user);
+        await _leadYourWayContext.SaveChangesAsync();
+        return user.Id;
+    }
 }

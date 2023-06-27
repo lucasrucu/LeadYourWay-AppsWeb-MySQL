@@ -90,21 +90,21 @@ public class LeadYourWayContext : DbContext
             .WithMany(e => e.Bicycles)
             .HasForeignKey(e => e.UserId)
             .IsRequired();
-        builder.Entity<Card>()
-            .HasOne(c => c.User)
-            .WithMany(e => e.Cards)
-            .HasForeignKey(e => e.UserId)
-            .IsRequired();
+        // builder.Entity<Card>()
+        //     .HasOne(c => c.User)
+        //     .WithMany(e => e.Cards)
+        //     .HasForeignKey(e => e.UserId)
+        //     .IsRequired();
         builder.Entity<Rent>()
             .HasOne(b => b.Bicycle)
             .WithMany(e => e.Rents)
             .HasForeignKey(e => e.BicycleId)
             .IsRequired();
-        builder.Entity<Rent>()
-            .HasOne(c => c.Card)
-            .WithMany(e => e.Rents)
-            .HasForeignKey(e => e.CardId)
-            .IsRequired();
+        // builder.Entity<Rent>()
+        //     .HasOne(c => c.Card)
+        //     .WithMany(e => e.Rents)
+        //     .HasForeignKey(e => e.CardId)
+        //     .IsRequired();
         // builder.Entity<Bicycle>()
         //     .HasMany(c => c.Rents)
         //     .WithOne(e => e.Bicycle)

@@ -15,3 +15,20 @@ C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-My
 C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Domain\obj\Debug\net7.0\ref\LeadYourWay.Domain.dll
 C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Domain\bin\Debug\net7.0\LeadYourWay.Shared.dll
 C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 1\LeadYourWay-AppsWeb-MySQL Rev 0\LeadYourWay.Domain\bin\Debug\net7.0\LeadYourWay.Shared.pdb
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\bin\Debug\net7.0\LeadYourWay.Domain.deps.json
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\bin\Debug\net7.0\LeadYourWay.Domain.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\bin\Debug\net7.0\LeadYourWay.Domain.pdb
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\bin\Debug\net7.0\LeadYourWay.Infrastructure.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\bin\Debug\net7.0\LeadYourWay.Shared.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\bin\Debug\net7.0\LeadYourWay.Infrastructure.pdb
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\bin\Debug\net7.0\LeadYourWay.Shared.pdb
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\obj\Debug\net7.0\LeadYourWay.Domain.csproj.AssemblyReference.cache
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\obj\Debug\net7.0\LeadYourWay.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\obj\Debug\net7.0\LeadYourWay.Domain.AssemblyInfoInputs.cache
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\obj\Debug\net7.0\LeadYourWay.Domain.AssemblyInfo.cs
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\obj\Debug\net7.0\LeadYourWay.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\obj\Debug\net7.0\LeadYourWay.Domain.csproj.CopyComplete
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\obj\Debug\net7.0\LeadYourWay.Domain.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\obj\Debug\net7.0\refint\LeadYourWay.Domain.dll
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\obj\Debug\net7.0\LeadYourWay.Domain.pdb
+C:\Users\ruizc\Documents\UPC\Ciclo V\6_LeadYourWay\Github\LeadYourWay-AppsWeb-MySQL Rev 3\LeadYourWay.Domain\obj\Debug\net7.0\ref\LeadYourWay.Domain.dll

@@ -1,4 +1,5 @@
-﻿using LeadYourWay.Infrastructure;
+﻿using LeadYourWay.Domain.Model;
+using LeadYourWay.Infrastructure;
 using LeadYourWay.Infrastructure.Models;
 
 namespace LeadYourWay.Domain;
@@ -6,10 +7,14 @@ namespace LeadYourWay.Domain;
 public class UserDomain : IUserDomain
 {
     private IUserInfrastructure _userInfrastructure;
+    private IEncryptDomain _encryptDomain;
+    private ITokenDomain _tokenDomain;
 
-    public UserDomain(IUserInfrastructure userInfrastructure)
+    public UserDomain(IUserInfrastructure userInfrastructure, IEncryptDomain encryptDomain, ITokenDomain tokenDomain)
     {
         _userInfrastructure = userInfrastructure;
+        _encryptDomain = encryptDomain;
+        _tokenDomain = tokenDomain;
     }
 
     public async Task<List<User>> GetAllAsync()
@@ -64,6 +69,32 @@ public class UserDomain : IUserDomain
     public async Task<User> GetByUsername(string username)
     {
         return await _userInfrastructure.GetByUsername(username);
+    }
+
+    public async Task<LoginResponse> LoginRev1(User user)
+    {
+        var foundUser = await _userInfrastructure.GetByUsername(user.Email);
+        
+        if (_encryptDomain.Encrypt(user.Password) == foundUser.Password)
+        {
+            var token = _tokenDomain.GenerateJwt(foundUser.Email);
+            var userId = foundUser.Id;
+            return new LoginResponse
+            {
+                Token = token,
+                Id = userId
+            };
+        }
+        
+        throw new ArgumentException("Invalid username or password");
+    }
+
+    public async Task<int> SignupRev1(User user)
+    {
+        if (ExistsByEmailValidation(user.Email)) throw new Exception("A user already exists with this email");
+        IsValidSave(user);
+        user.Password = _encryptDomain.Encrypt(user.Password);
+        return await _userInfrastructure.Signup(user);
     }
 
     private static void IsValidSave(User user)
