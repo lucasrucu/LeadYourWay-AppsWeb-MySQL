@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yCJKH40gaAjAZdWlnY0vbf8G5dq4Us28GGJG1GqfvJilwVx5/1oi3CDDeTwkfG0McelZa5+4zhp1+GWaN8VOvw==",
+  "dgSpecHash": "QggiKyywIjWCnaP/8avcPz54IydWXJECYjcrLYh3MSe/2Ht/pdWMc4evOxoTlMKoVj6p4+KVM12q/5p7tyK1YA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ruizc\\Documents\\UPC\\Ciclo V\\6_LeadYourWay\\Github\\LeadYourWay-AppsWeb-MySQL Rev 1\\LeadYourWay-AppsWeb-MySQL Rev 0\\LeadYourWay.Infrastructure\\LeadYourWay.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\ruizc\\Documents\\UPC\\Ciclo V\\6_LeadYourWay\\Github\\LeadYourWay-AppsWeb-MySQL Rev 3\\LeadYourWay.Infrastructure\\LeadYourWay.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ruizc\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\ruizc\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "71QjU0RAf7iR8EEqDOJDxrkjkSU4EnDEpjj9jmPsPHbcK13kpTflkyhc5ou6wJCLIT54vcLIrb4bBlfYWRygUg==",
+  "dgSpecHash": "s7R/Co/uJPmYqVG2IxVelrlJuvE5gyXfI9a/BQE5E6eEdkH/b0hfvnWno9YPODyED9v9ogDERQUD26ckXKjM4Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ruizc\\Documents\\UPC\\Ciclo V\\6_LeadYourWay\\Github\\LeadYourWay-AppsWeb-MySQL Rev 1\\LeadYourWay-AppsWeb-MySQL Rev 0\\LeadYourWay.Domain\\LeadYourWay.Domain.csproj",
+  "projectFilePath": "C:\\Users\\ruizc\\Documents\\UPC\\Ciclo V\\6_LeadYourWay\\Github\\LeadYourWay-AppsWeb-MySQL Rev 3\\LeadYourWay.Domain\\LeadYourWay.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ruizc\\.nuget\\packages\\identitymodel\\6.1.0\\identitymodel.6.1.0.nupkg.sha512",
     "C:\\Users\\ruizc\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

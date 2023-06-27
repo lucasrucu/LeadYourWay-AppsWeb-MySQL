@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hf/gEmAxth9IPjOoEmP+q6e7Jhyu5HnukBIL4xVecJb2moVYrwcs5xP3h81ZcKTx4UG95IyLhzotj2+st5W0QQ==",
+  "dgSpecHash": "Xzpq+QIq527CYALIxjruyN5qJd0oo0QhkSVMKURRHiYA/qFu6VYDH+iBFB9YqDY3rp+Q/d63FuU0UIKPD9kzMQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ruizc\\Documents\\UPC\\Ciclo V\\6_LeadYourWay\\Github\\LeadYourWay-AppsWeb-MySQL Rev 1\\LeadYourWay-AppsWeb-MySQL Rev 0\\LeadYourWay.API\\LeadYourWay.API.csproj",
+  "projectFilePath": "C:\\Users\\ruizc\\Documents\\UPC\\Ciclo V\\6_LeadYourWay\\Github\\LeadYourWay-AppsWeb-MySQL Rev 3\\LeadYourWay.API\\LeadYourWay.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ruizc\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ruizc\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
