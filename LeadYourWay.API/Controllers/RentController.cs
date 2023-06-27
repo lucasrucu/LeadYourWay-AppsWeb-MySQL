@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using LeadYourWay.API.Filter;
 using LeadYourWay.API.Request;
 using LeadYourWay.Domain;
 using LeadYourWay.Infrastructure.Models;

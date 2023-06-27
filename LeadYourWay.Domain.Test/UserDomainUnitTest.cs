@@ -15,8 +15,10 @@ public class UserDomainUnitTest
             Name = "Test"
         };
         var userInfrastructure = new Mock<IUserInfrastructure>();
+        var encryptDomain = new Mock<IEncryptDomain>();
+        var tokenDomain = new Mock<ITokenDomain>();
         userInfrastructure.Setup(t => t.save(user)).Returns(true);
-        var userDomain = new UserDomain(userInfrastructure.Object);
+        var userDomain = new UserDomain(userInfrastructure.Object, encryptDomain.Object, tokenDomain.Object);
 
         // Act
         var result = userDomain.save(user);
@@ -34,8 +36,10 @@ public class UserDomainUnitTest
             Name = "Test123456789123456789123456789123456789123456789123"
         };
         var userInfrastructure = new Mock<IUserInfrastructure>();
+        var encryptDomain = new Mock<IEncryptDomain>();
+        var tokenDomain = new Mock<ITokenDomain>();
         //userInfrastructure.Setup(t => t.save(user)).Returns(true);
-        var userDomain = new UserDomain(userInfrastructure.Object);
+        var userDomain = new UserDomain(userInfrastructure.Object, encryptDomain.Object, tokenDomain.Object);
 
         // Act
         var ex = Assert.Throws<Exception>(() => userDomain.save(user));

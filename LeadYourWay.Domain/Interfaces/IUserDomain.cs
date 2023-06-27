@@ -1,4 +1,5 @@
-﻿using LeadYourWay.Infrastructure.Models;
+﻿using LeadYourWay.Domain.Model;
+using LeadYourWay.Infrastructure.Models;
 
 namespace LeadYourWay.Domain;
 
@@ -11,4 +12,6 @@ public interface IUserDomain
     public bool update(int id, UserDto value);
     public bool delete(int id);
     Task<User> GetByUsername(string username);
+    Task<LoginResponse> LoginRev1(User user);
+    Task<int> SignupRev1(User user);
 }

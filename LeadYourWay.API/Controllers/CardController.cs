@@ -1,4 +1,5 @@
 using AutoMapper;
+using LeadYourWay.API.Filter;
 using LeadYourWay.API.Request;
 using LeadYourWay.Domain;
 using LeadYourWay.Infrastructure;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LeadYourWay.API.Controllers;
 
 [EnableCors("AllowOrigin")]
+[Authorize("admin")]
 [Route("api/card")]
 [ApiController]
 public class CardController : ControllerBase

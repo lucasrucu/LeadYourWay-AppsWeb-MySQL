@@ -15,4 +15,5 @@ public interface IUserInfrastructure
     public bool update(int id, UserDto user);
     public bool delete(int id);
     Task<User> GetByUsername(string username);
+    Task<int> Signup(User user);
 }

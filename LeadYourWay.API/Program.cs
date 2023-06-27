@@ -48,12 +48,12 @@ var connectionString = builder.Configuration.GetConnectionString("LeadYourWayCon
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
 
 // JWT
-/*builder.Services.AddAuthentication(options =>
+builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-});*/
+});
 
 builder.Services.AddDbContext<LeadYourWayContext>(
     dbContextOptions =>
@@ -91,7 +91,7 @@ app.UseCors(x => x
     .AllowAnyMethod()
     .AllowAnyHeader());
 
-/*app.UseMiddleware<JwtMiddleware>();*/
+app.UseMiddleware<JwtMiddleware>();
 
 app.UseHttpsRedirection();
 
